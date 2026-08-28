@@ -107,7 +107,7 @@ struct NoteletSheetContentView: View {
             }
         )
         .presentationDetents([
-            isIPad ? .large : .fraction(0.85)
+            isIPad || configuration.sheetHeight == .full ? .large : .fraction(0.85)
         ])
         .presentationDragIndicator(.visible)
         .presentationBackground(sheetBackgroundStyle)

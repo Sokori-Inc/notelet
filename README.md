@@ -282,7 +282,7 @@ let RELEASE_NOTES: [NoteletVersionNotes] = [
 
 ## Additional configuration
 
-`.noteletSheet()` accepts an optional `NoteletConfiguration` struct where you can customize button labels and accent color.
+`.noteletSheet()` accepts an optional `NoteletConfiguration` struct where you can customize button labels, accent color and the sheet height.
 
 ```swift
 .noteletSheet(
@@ -291,10 +291,13 @@ let RELEASE_NOTES: [NoteletVersionNotes] = [
     configuration: .init(
         nextButtonLabel: "Continue",
         doneButtonLabel: "Got it",
-        accentColor: .orange
+        accentColor: .orange,
+        sheetHeight: .full
     )
 )
 ```
+
+`sheetHeight` controls the detent on iPhone: `.standard` (the default) covers 85% of the screen and leaves a sliver of the presenting view visible, `.full` uses the large detent. iPad always uses the large detent.
 
 ## Latest viewed version storage
 
