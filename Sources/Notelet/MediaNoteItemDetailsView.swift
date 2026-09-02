@@ -18,6 +18,7 @@ struct MediaNoteItemDetailsView: View {
             Text(description)
 
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
         .multilineTextAlignment(.leading)
         .fixedSize(horizontal: false, vertical: true)
         .padding(.horizontal, 30)
