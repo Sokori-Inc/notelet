@@ -57,6 +57,7 @@ struct NoteletSheetContentView: View {
             .scrollTargetBehavior(.paging)
             .scrollIndicators(.hidden)
             .scrollPosition(id: $selectedPageID)
+            .modifier(SoftScrollEdgeEffect())
         }
         .modifier(
             SafeAreaView {
@@ -123,5 +124,16 @@ struct NoteletSheetContentView: View {
         }
 
         return currentPage >= versionNotes.count - 1
+    }
+}
+
+fileprivate struct SoftScrollEdgeEffect: ViewModifier {
+    func body(content: Content) -> some View {
+        if #available(iOS 26, *) {
+            content
+                .scrollEdgeEffectStyle(.soft, for: .all)
+        } else {
+            content
+        }
     }
 }
