@@ -127,7 +127,7 @@ struct NoteletSheetContentView: View {
     }
 }
 
-struct SoftScrollEdgeEffect: ViewModifier {
+fileprivate struct SoftScrollEdgeEffect: ViewModifier {
     func body(content: Content) -> some View {
         if #available(iOS 26, *) {
             content
